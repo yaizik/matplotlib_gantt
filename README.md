@@ -32,4 +32,4 @@ g.draw_gannt(df,"example2")
 ```
 Will generate the following diagram:
 
-![gannt diagram](url)
+![gannt diagram](example.png)
