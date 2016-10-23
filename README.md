@@ -28,8 +28,49 @@ df = pandas.read_csv(StringIO.StringIO(TABLE))
 g = Gannt()
 
 g.draw_gannt(df,"example1")
-g.draw_gannt(df,"example2")
 ```
 Will generate the following diagram:
 
 ![gannt diagram](example.png)
+
+The module contains a utility to convert formats - 
+```python
+TABLE = """
+5,    TASK STARTED   Task 1
+6,    TASK ENDED Task 1
+6,    TASK STARTED   Task 2
+8,    TASK ENDED Task 2
+7,    TASK STARTED   Task 3
+9,    TASK ENDED Task 3
+0,    TASK STARTED   Task 4
+3,    TASK ENDED Task 4
+2,    TASK STARTED   Task 5
+6,    TASK ENDED Task 5
+5,    TASK STARTED   Task 6
+6,    TASK ENDED Task 6
+6,    TASK STARTED   Task 7
+7,    TASK ENDED Task 7
+4,    TASK STARTED   Task 8
+8,    TASK ENDED Task 8
+4,    TASK STARTED   Task 9
+9,    TASK ENDED Task 9
+4,    TASK STARTED   Task 10
+10,    TASK ENDED Task 10
+4,    TASK STARTED   Task 11
+11,    TASK ENDED Task 11
+4,    TASK STARTED   Task 12
+12,    TASK ENDED Task 12
+4,    TASK STARTED   Task 13
+13,    TASK ENDED Task 13
+5,    TASK STARTED   Task 14
+18,    TASK ENDED Task 14
+9,    TASK STARTED   Task 15
+17,    TASK ENDED Task 15
+"""
+
+
+df = pandas.read_csv(StringIO.StringIO(TABLE),header=None, names=["time", "event"])
+g = Gannt()
+df = g.convert_format(df,start_string="TASK STARTED", end_string="TASK ENDED")
+g.draw_gannt(df,"example1")
+```
