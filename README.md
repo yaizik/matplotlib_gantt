@@ -2,6 +2,8 @@
 
 Plot simple Gannt diagrams using python and matplotlib.
 
+(Adapted from http://www.clowersresearch.com/main/gantt-charts-in-matplotlib/, which is based on https://bitbucket.org/DBrent/phd/src/1d1c5444d2ba2ee3918e0dfd5e886eaeeee49eec/visualisation/plot_gantt.py)
+
 Usage example:
 ```python
 TABLE = """
