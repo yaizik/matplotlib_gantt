@@ -74,3 +74,4 @@ g = Gannt()
 df = g.convert_format(df,start_string="TASK STARTED", end_string="TASK ENDED")
 g.draw_gannt(df,"example1")
 ```
+##TODO: better document, better encapsulate
